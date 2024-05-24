@@ -1,0 +1,11 @@
+{
+    "name": "Kratia",
+    "version": "0.0.1",
+    "description": "Browser extension for the Kratia search engine",
+    "manifest_version": 3,
+    "author": "Mario R Carbonell",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Kratia"
+    }
+}
