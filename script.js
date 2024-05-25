@@ -5,3 +5,10 @@
     document.getElementById('currurl').textContent = tab.url;
     // ..........
   })();
+
+
+  chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.type === 'TAB_CHANGED' || message.type === 'URL_CHANGED') {
+      document.getElementById('currurl').textContent = message.url;
+    }
+  });

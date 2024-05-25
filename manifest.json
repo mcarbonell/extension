@@ -1,14 +1,33 @@
 {
+    "manifest_version": 3,
     "name": "Kratia",
     "version": "0.0.1",
     "description": "Browser extension for the Kratia search engine",
-    "manifest_version": 3,
     "author": "Mario R Carbonell",
     "permissions": [
-        "tabs"
-    ],
+        "tabs",
+        "activeTab",
+        "webRequest",
+        "declarativeNetRequest",
+        "declarativeNetRequestWithHostAccess",
+        "storage",
+        "activeTab"
+      ],
+      "background": {
+        "service_worker": "background.js"
+      },
     "action": {
         "default_popup": "index.html",
         "default_title": "Kratia"
-    }
+    },
+    "options_page": "options.html",
+    "declarative_net_request": {
+        "rule_resources": [
+          {
+            "id": "ruleset_1",
+            "enabled": true,
+            "path": "rules.json"
+          }
+        ]
+      }
 }
