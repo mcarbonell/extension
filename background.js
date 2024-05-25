@@ -32,6 +32,11 @@ function updateBlockedSites(blockedSites) {
     }
   });  
 
+  chrome.sidePanel
+  .setPanelBehavior({ openPanelOnActionClick: true })
+  .catch((error) => console.error(error));
+
+
   /*
   chrome.tabs.onActivated.addListener(async (activeInfo) => {
     const tab = await chrome.tabs.get(activeInfo.tabId);

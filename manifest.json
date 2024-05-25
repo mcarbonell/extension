@@ -11,23 +11,28 @@
         "declarativeNetRequest",
         "declarativeNetRequestWithHostAccess",
         "storage",
+        "sidePanel",
         "activeTab"
-      ],
-      "background": {
+    ],
+    "background": {
         "service_worker": "background.js"
-      },
+    },
     "action": {
         "default_popup": "index.html",
-        "default_title": "Kratia"
+        "default_title": "Kratia",
+        "default_icon": "Kratia2.png"
+    },
+    "side_panel": {
+        "default_path": "sidepanel.html"
     },
     "options_page": "options.html",
     "declarative_net_request": {
         "rule_resources": [
-          {
-            "id": "ruleset_1",
-            "enabled": true,
-            "path": "rules.json"
-          }
+            {
+                "id": "ruleset_1",
+                "enabled": true,
+                "path": "rules.json"
+            }
         ]
-      }
+    }
 }
