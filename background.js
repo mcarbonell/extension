@@ -32,12 +32,34 @@ function updateBlockedSites(blockedSites) {
     }
   });  
 
+
+  chrome.runtime.onInstalled.addListener(() => {
+    chrome.action.setBadgeText({
+      text: "OFF",
+    });
+  });
+
+
+  chrome.action.onClicked.addListener(async (tab) => {  
+      // Retrieve the action badge to check if the extension is 'ON' or 'OFF'
+      const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
+      // Next state will always be the opposite
+      const nextState = prevState === 'ON' ? 'OFF' : 'ON'
+  
+      // Set the action badge to the next state
+      await chrome.action.setBadgeText({
+        tabId: tab.id,
+        text: nextState,
+      });    
+  });
+
+  /*
   chrome.sidePanel
   .setPanelBehavior({ openPanelOnActionClick: true })
   .catch((error) => console.error(error));
+*/
 
 
-  /*
   chrome.tabs.onActivated.addListener(async (activeInfo) => {
     const tab = await chrome.tabs.get(activeInfo.tabId);
     console.log('Tab changed to:', tab.url);
@@ -52,4 +74,3 @@ function updateBlockedSites(blockedSites) {
       // Aquí puedes hacer algo con la URL, por ejemplo, enviarla al servidor
     }
   });
-  */
