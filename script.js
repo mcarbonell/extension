@@ -12,3 +12,11 @@
       document.getElementById('currurl').textContent = message.url;
     }
   });
+
+
+  document.getElementById('returninfo').textContent= 'Probando';
+
+  console.log('Text fetch');
+
+  fetch('http://www.google.com/')
+  .then(response => console.log(response) );

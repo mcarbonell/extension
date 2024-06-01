@@ -27,7 +27,7 @@
         "default_title": "Kratia",
         "default_icon": "Kratia2.png"
     },
-
+    "host_permissions": ["https://www.google.com/"],
     "options_page": "options.html",
     "declarative_net_request": {
         "rule_resources": [
